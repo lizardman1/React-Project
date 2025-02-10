@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TipCalculator } from '../components/TipCalculator'
+import TipButton from '../components/TipButton'
 
 function App() {
   return (
