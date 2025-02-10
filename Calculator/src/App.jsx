@@ -10,6 +10,7 @@ export default function App() {
   return (
     <>
       <Routes>
+        <Route index element={<TipCalculator />} />
         <Route path="/TestTipCalc" element={<TestTip />} />
       </Routes>
     </>
