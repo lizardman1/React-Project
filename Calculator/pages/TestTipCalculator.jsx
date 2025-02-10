@@ -1,10 +1,10 @@
 import React from "react";
-import { TipCalculator } from "../components/TipCalculator";
+import { TestTipCalculator } from "../components/TestTipCalculator";
 
 export default function TestTip(){
     return (
         <div>
-            <TipCalculator />
+            <TestTipCalculator />
         </div>
     )
 }
