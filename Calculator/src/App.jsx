@@ -5,18 +5,19 @@ import {Route, Routes} from 'react-router-dom'
 import './App.css'
 import TestTip from '../pages/TestTipCalculator'
 import { TipCalculator } from '../components/TipCalculator'
+import TipButton from '../components/TipButton'
 
 
 function App() {
   return (
+    <>
+      <TipButton percent={40} />
+      <TipButton percent={50} />
+    
     <TipCalculator />
 
-    /*<Router>
-      <Switch>
-        <Route path="/Test" component={TestTip} />
-      </Switch>
-    </Router>
-  */);
+    </>
+  )
 }
 
 export default App
