@@ -3,9 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TipCalculator } from '../components/TipCalculator'
+import { Route, Routes } from 'react-router-dom'
+import TestTip from '../pages/TestTipCalculator'
 
 export default function App() {
   return (
-    <TipCalculator />
+    <>
+      <Routes>
+        <Route path="/TestTipCalc" element={<TestTip />} />
+      </Routes>
+    </>
   )
 }
