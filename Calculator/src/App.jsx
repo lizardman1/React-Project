@@ -3,9 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TipCalculator } from '../components/TipCalculator'
-import TipButton from '../components/TipButton'
+import { Route, Routes } from 'react-router-dom'
+import TestTip from '../pages/TestTipCalculator'
 
-function App() {
+export default function App() {
   return (
     <>
       <TipButton percent={40} name="tip" />
@@ -13,8 +14,10 @@ function App() {
     
     <TipCalculator />
 
+      <Routes>
+        <Route index element={<TipCalculator />} />
+        <Route path="/TestTipCalc" element={<TestTip />} />
+      </Routes>
     </>
   )
 }
-
-export default App

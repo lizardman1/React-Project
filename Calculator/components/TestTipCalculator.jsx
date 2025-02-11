@@ -6,7 +6,7 @@ export default function Calculator() {
   )
 }
 
-export function TipCalculator(){
+export function TestTipCalculator(){
     const [amount, setAmount] = useState('');
     const [persons, setPersons] = useState('1');
     const [service, setService] = useState('Select');

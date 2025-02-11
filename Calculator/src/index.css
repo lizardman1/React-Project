@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+    font-family: "Hanuman", serif;
+}
+
 .hanuman-thin {
     font-family: "Hanuman", serif;
     font-weight: 100;
