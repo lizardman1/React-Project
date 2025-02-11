@@ -8,8 +8,8 @@ import TipButton from '../components/TipButton'
 function App() {
   return (
     <>
-      <TipButton percent={40} />
-      <TipButton percent={50} />
+      <TipButton percent={40} name="tip" />
+      <TipButton percent={50} name="tip" />
     
     <TipCalculator />
 
