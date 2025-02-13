@@ -1,9 +1,6 @@
-import { createContext, useState, useContext } from "react"
 import { TipCalculator } from "./TipCalculator"
 
-
 export default function TipComponents() {
-    const [monthlyPayment, setMonthlyPayment] = useState(0)
     return (
         <div>
             <div className='w-screen h-screen flex justify-center items-center bg-[#c5e5e8]'>
