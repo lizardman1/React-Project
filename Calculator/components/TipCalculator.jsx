@@ -58,7 +58,7 @@ export function TipCalculator(){
                 value={persons}
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
-            <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold'>Calculate</button>
+            <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold hover:bg-[#c2cd5f]'>Calculate</button>
             {showEach && <div>Each person should pay: {total}</div>}
             {total && (<div className='tip'><p>Total Tip: ${total}</p> </div>)}
             </div>
