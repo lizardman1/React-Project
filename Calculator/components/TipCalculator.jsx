@@ -35,6 +35,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
+                className='p-2 bg-[#f2f7fa]'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
@@ -56,6 +57,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder='Number of Persons'
                 value={persons}
+                className='p-2 bg-[#f2f7fa]'
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
             <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold hover:bg-[#c2cd5f]'>Calculate</button>

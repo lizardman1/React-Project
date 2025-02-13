@@ -40,6 +40,7 @@ export function TestTipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
+                className='w-screen h-screen flex justify-center items-center bg-[#c5e5e8]'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
