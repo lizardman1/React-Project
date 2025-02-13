@@ -6,6 +6,7 @@ import { TipCalculator } from '../components/TipCalculator'
 import { Route, Routes } from 'react-router-dom'
 import TestTip from '../pages/TestTipCalculator'
 import TipButton from '../components/TipButton'
+import ButtonTest from '../pages/ButtonTest'
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
       <Routes>
         <Route index element={<TipCalculator />} />
         <Route path="/TestTipCalc" element={<TestTip />} />
-        <Route path="/tipbutton" element={<TipButton percent={40}/>} />
+        <Route path="/tipbutton" element={<ButtonTest />}  />
       </Routes>
     </>
   )
