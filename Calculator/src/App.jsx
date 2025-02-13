@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import TestTip from '../pages/TestTipCalculator'
 import TipButton from '../components/TipButton'
 import ButtonTest from '../pages/ButtonTest'
+import TipComponentsCombined from '../components/TipComponentsCombined'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/TestTipCalc" element={<TestTip />} />
         <Route path="/tipbutton" element={<ButtonTest />}  />
       </Routes>
+  <TipComponentsCombined />
     </>
   )
 }
