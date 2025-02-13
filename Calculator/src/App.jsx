@@ -22,7 +22,6 @@ export default function App() {
         <Route path="/TestTipCalc" element={<TestTip />} />
         <Route path="/tipbutton" element={<ButtonTest />}  />
       </Routes>
-  <TipComponentsCombined />
     </>
   )
 }

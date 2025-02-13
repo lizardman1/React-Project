@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState} from 'react'
+import TipButton from './TipButton';
 
 export default function Calculator() {
   return (
@@ -12,6 +13,10 @@ export function TestTipCalculator(){
     const [service, setService] = useState('Select');
     const [total, setTotal] = useState(null);
     const [showEach, setShowEach] = useState(false);
+
+    function setservice(percent) {
+      setService(percent)
+    }
 
     const calculateTip = () => {
 
@@ -27,7 +32,7 @@ export function TestTipCalculator(){
         else
           setShowEach(true);
     
-        const CalcTotal = (amount * service) / persons;
+        const CalcTotal = (amount * (service/100)) / persons;
         setTotal(CalcTotal.toFixed(2));
       };
 
@@ -42,8 +47,8 @@ export function TestTipCalculator(){
                 value = {amount}
                 onChange={(e) => setAmount(e.target.value)} />
 
-            <label htmlFor="service">Tip Amount %</label>
-            <select
+            <label htmlFor="service">Select Tip %</label>
+            {/* <select
                 id="service"
                 value={service}
                 onChange={(e) => setService(e.target.value)}>
@@ -53,7 +58,17 @@ export function TestTipCalculator(){
                 <option value="0.15">15%</option>
                 <option value="0.1">10%</option>
                 <option value="0.05">5%</option>
-            </select>
+            </select> */}
+            <div className="grid grid-cols-3 gap-1"
+            id="service"
+            onChange={(e) => setService(e.target.value)}>
+
+              {
+                [5,10,15,20,25].map(s =>   <TipButton key={s} checked={service == s } percent={s} setservice={setservice} /> )
+              }
+          
+              <TipButton percent={<input className="w-0.7" />} setservice={setservice}/>
+            </div>
 
             <label htmlFor="persons">Number of People</label>
             <input 

@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function TipButton({ percent, name }) {
+export default function TipButton( {percent}, {setservice} ) {
   const ButtonClickable3 = (props) => {
     const [isActive, setActive] = useState(false);
     const handleToggle = (e) => {
      setActive(!isActive);
      props.onClick(e)
+     props.onClick(setservice({percent}))
      
      
     }
@@ -24,7 +25,7 @@ export default function TipButton({ percent, name }) {
                name="tip"
                value={percent}
                checked={isActive}
-               onChange={() => {}}
+               onChange={() => setservice({percent})}
                className="hidden"
              /> 
             

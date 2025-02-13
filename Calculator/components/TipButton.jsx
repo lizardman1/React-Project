@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function TipButton({ percent, name }) {
+export default function TipButton({ percent, setservice, checked =false }) {
   const ButtonClickable3 = (props) => {
-    const [isActive, setActive] = useState(null);
+   
     const handleToggle = (e) => {
-     setActive(!isActive);
-    props.onClick(e)
-     
+  
+    // props.onClick(e)
+
+    setservice(parseFloat(percent))
      
     }
     return <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
@@ -17,16 +18,16 @@ export default function TipButton({ percent, name }) {
     
     <label 
               className="cursor-pointer"
-              onClick={handleToggle}
+              
               >
     <input
                type="radio"
                name="tip"
                value={percent}
-               checked={isActive}
+               checked={checked}
                onChange={() => {}}
                className="hidden"
-               onClick={handleToggle}
+            
              /> 
             
               {percent}%
