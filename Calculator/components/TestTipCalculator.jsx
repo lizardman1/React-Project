@@ -11,28 +11,38 @@ export function TestTipCalculator(){
     const [persons, setPersons] = useState('1');
     const [service, setService] = useState('Select');
     const [total, setTotal] = useState(null);
+    const [tip, setTip] = useState(null);
     const [showEach, setShowEach] = useState(false);
 
     const calculateTip = () => {
 
-        console.log(amount, persons, service);
-
-        if (amount === '' || service === 'Select') {
-          alert('Please enter values');
+        if(isNaN(amount) || isNaN(persons) || isNaN(service)){
+          alert('Please enter valid values');
           return;
         }
-    
-        if (persons === '1')
+
+        const numPersons = parseInt(persons, 10);
+        const tipPercentage = parseFloat(service);
+
+        if (numPersons === '1')
           setShowEach(false);
         else
           setShowEach(true);
-    
-        const CalcTotal = (amount * service) / persons;
-        setTotal(CalcTotal.toFixed(2));
+
+        const totalTip = (amount * tipPercentage);
+        const tipPerPerson = totalTip / numPersons;
+        const totalAmount = parseFloat(amount) + totalTip;
+        const PersonsCalcTotal = totalAmount / numPersons;
+
+        console.log(totalTip, tipPerPerson, totalAmount, PersonsCalcTotal);
+
+        setTotal(totalAmount.toFixed(2));
+        setTip(PersonsCalcTotal.toFixed(2));
       };
+      
 
     return (
-        <div className='p-6 flex flex-col gap-6 max-w-md mx-auto'>
+        <div className='p-6 flex flex-cols gap-6 max-w-md mx-auto'>
             <div className='flex gap-4 flex-wrap'>
             <label htmlFor="amount">Bill</label>
             <input
@@ -64,8 +74,8 @@ export function TestTipCalculator(){
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
             <button onClick={calculateTip} className='bg-[#69dc9e] px-3 py-2 rounded-full fomt-semibold'>Calculate</button>
-            {showEach && <div>Each person should pay: {total}</div>}
-            {total && (<div className='tip'><p>Total Tip: ${total}</p> </div>)}
+            {showEach && (<div className='tip'><p>Total: ${total}</p> </div>)}
+            {showEach && persons > 1 && <div>Each person should pay: {tip}</div>}
             </div>
             );
 }
