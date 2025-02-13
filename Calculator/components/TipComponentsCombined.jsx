@@ -12,8 +12,10 @@ export default function TipComponents() {
 
             <TipCalculator /> 
 
-            <div className="bg-[#00464a] w-full h-full rounded-xl text-white">
-            answer should be here
+            <div className="bg-[#00464a] w-full h-full rounded-xl text-white grid place-items-center p-2">
+            <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" /> 
+            {/* The results should hide/replace the image and span when being displayed*/}
+            <span className="text-[#c5e5e8]">results will appear here</span>
              </div>
 
             </div>

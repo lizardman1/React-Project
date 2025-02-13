@@ -3,21 +3,21 @@ import { useState } from 'react';
 
 export default function TipButton({ percent, name }) {
   const ButtonClickable3 = (props) => {
-    const [isActive, setActive] = useState(false);
+    const [isActive, setActive] = useState(null);
     const handleToggle = (e) => {
      setActive(!isActive);
-     props.onClick(e)
+    props.onClick(e)
      
      
     }
     return <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
-                onClick={handleToggle}
+    onClick={handleToggle}
     
       >
     
     <label 
               className="cursor-pointer"
-              
+              onClick={handleToggle}
               >
     <input
                type="radio"
@@ -26,6 +26,7 @@ export default function TipButton({ percent, name }) {
                checked={isActive}
                onChange={() => {}}
                className="hidden"
+               onClick={handleToggle}
              /> 
             
               {percent}%
@@ -34,7 +35,8 @@ export default function TipButton({ percent, name }) {
             }
   return (
     <>
-    <div className="flex justify-center">
+    <div className="flex justify-center"
+        >
       <ButtonClickable3 />
       </div>
     </>
