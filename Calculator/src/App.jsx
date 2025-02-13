@@ -18,11 +18,11 @@ export default function App() {
     <TipCalculator /> */}
 
       <Routes>
-        <Route index element={<TipCalculator />} />
+        <Route index element={<TipComponentsCombined />} />
         <Route path="/TestTipCalc" element={<TestTip />} />
         <Route path="/tipbutton" element={<ButtonTest />}  />
       </Routes>
-  <TipComponentsCombined />
+
     </>
   )
 }
