@@ -1,10 +1,5 @@
 import React, { createContext, useContext, useState} from 'react'
 
-export default function Calculator() {
-  return (
-    <div>Calculator</div>
-  )
-}
 
 export function TipCalculator(){
   const [amount, setAmount] = useState('');
@@ -49,6 +44,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
+                className='p-2 bg-[#f2f7fa] text-right'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
@@ -70,6 +66,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder='Number of Persons'
                 value={persons}
+                className='p-2 bg-[#f2f7fa] text-right'
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
             <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold hover:bg-[#c2cd5f]'>Calculate</button>
