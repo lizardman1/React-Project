@@ -1,6 +1,6 @@
 import InputGroup from "./InputGroup"
 import { createContext, useState, useContext } from "react"
-import { TestTipCalculator } from "./TipCalculator"
+import TestTipCalculator from "./TestTipCalculator"
 
 const TipContext = createContext({
     monthlyPayment: 0,
@@ -55,7 +55,7 @@ export default function TipComponents() {
             <div className='text-4xl text-[00464a] text-center font-bold mb-20'><p>Tip Calculator</p>
             <div className='grid grid-cols-2 items-center max-w-2xl mx-auto rounded-4xl bg-white  border-white border-20'>
 
-               <TestTipCalculator /> 
+            <TestTipCalculator /> 
 
             </div>
             </div>
