@@ -1,10 +1,5 @@
 import React, { createContext, useContext, useState} from 'react'
 
-export default function Calculator() {
-  return (
-    <div>Calculator</div>
-  )
-}
 
 export function TipCalculator(){
     const [amount, setAmount] = useState('');
