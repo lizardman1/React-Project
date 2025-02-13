@@ -30,7 +30,7 @@ export function TipCalculator(){
       else
         setShowEach(true);
 
-      const totalTip = (amount * (tipPercentage/100));
+      const totalTip = (amount * tipPercentage);
       const tipPerPerson = totalTip / numPersons;
       const totalAmount = parseFloat(amount) + totalTip;
       const PersonsCalcTotal = totalAmount / numPersons;
