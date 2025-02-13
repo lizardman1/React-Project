@@ -32,7 +32,7 @@ export function TestTipCalculator(){
       };
 
     return (
-        <div className='p-6 flex flex-col gap-6 max-w-md mx-auto'>
+        <div className='p-6 flex flex-col gap-6 max-w-md mx-auto bg-white rounded-br-3xl'>
             <div className='flex gap-4 flex-wrap'>
             <label htmlFor="amount">Bill</label>
             <input
@@ -40,7 +40,6 @@ export function TestTipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
-                className='w-screen h-screen flex justify-center items-center bg-[#c5e5e8]'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
@@ -64,7 +63,7 @@ export function TestTipCalculator(){
                 value={persons}
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
-            <button onClick={calculateTip} className='bg-[#69dc9e] px-3 py-2 rounded-full fomt-semibold hover:bg-[#64c97e]'>Calculate</button>
+            <button onClick={calculateTip} className='bg-[#69dc9e] px-3 py-2 rounded-full font-semibold hover:bg-[#64c97e]'>Calculate</button>
             {showEach && <div>Each person should pay: {total}</div>}
             {total && (<div className='tip'><p>Total Tip: ${total}</p> </div>)}
             </div>

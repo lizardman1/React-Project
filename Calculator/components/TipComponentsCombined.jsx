@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react"
-import { TipCalculator } from "./TipCalculator"
+import { TestTipCalculator } from "./TestTipCalculator"
 
 
 export default function TipComponents() {
@@ -7,12 +7,13 @@ export default function TipComponents() {
     return (
         <div>
             <div className='w-screen h-screen flex justify-center items-center bg-[#c5e5e8]'>
-            <div className='flex flex-col items-center'> <p className='text-4xl text-[#00464a] font-bold mb-10'>Tip Calculator</p>
+            <div className='text-4xl text-[00464a] text-center font-bold mb-20 space-y-4'><p>Tip Calculator 005</p>
             <div className='grid grid-cols-2 items-center max-w-2xl mx-auto rounded-4xl bg-white  border-white border-20 font-normal text-base'>
+            <div className="bg-[#00464a]">
+                <TestTipCalculator /> 
+            </div>
 
-            <TipCalculator /> 
-
-            <div className="bg-[#00464a] w-full h-full rounded-xl text-white grid place-items-center p-2">
+            <div className="bg-[#00464a] w-full h-full rounded-3xl rounded-bl-none text-white grid place-items-center p-2">
             <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" /> 
             {/* The results should hide/replace the image and span when being displayed*/}
             <span className="text-[#c5e5e8]">results will appear here</span>
@@ -20,7 +21,8 @@ export default function TipComponents() {
 
             </div>
             </div>
+            </div>
          </div>
-         </div>
-    )   
+
+    )
 }
