@@ -9,6 +9,11 @@ import TestTip from '../pages/TestTipCalculator'
 export default function App() {
   return (
     <>
+      <TipButton percent={40} name="tip" />
+      <TipButton percent={50} name="tip" />
+    
+    <TipCalculator />
+
       <Routes>
         <Route index element={<TipCalculator />} />
         <Route path="/TestTipCalc" element={<TestTip />} />
