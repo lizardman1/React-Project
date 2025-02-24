@@ -1,45 +1,36 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function TipButton({ percent, setservice, checked =false }) {
-  const ButtonClickable3 = (props) => {
-   
-    const handleToggle = (e) => {
+export default function CustomButton({ percent, setservice, checked = false }) {
+    const [customVal, setCustomVal] = useState('');
   
-    // props.onClick(e)
-
-    setservice(parseFloat(percent))
-     
-    }
-    return <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
-    onClick={handleToggle}
-    
+    const handleToggle = () => {
+      if (customVal) {
+        setservice(parseFloat(customVal));
+      } else {
+        setservice(parseFloat(percent));
+      }
+    };
+  
+    const handleCustomChange = (e) => {
+      setCustomVal(e.target.value);
+    };
+  
+    return (
+      <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] has-checked:bg-[#28C4AF]"
+        onClick={handleToggle}
       >
-    
-    <label 
-              className="cursor-pointer"
-              
-              >
-    <input
-               type="radio"
-               name="tip"
-               value={percent}
-               checked={checked}
-               onChange={() => {}}
-               className="hidden"
-            
-             /> 
-            
-              {percent}%
-            </label>
-            </div>
-            }
-  return (
-    <>
-    <div className="flex justify-center"
-        >
-      <ButtonClickable3 />
+        <label className="">
+          <input
+            type="text"
+            name="tip"
+            value={customVal}
+            onChange={handleCustomChange}
+            className="text-grey-500 text-center"
+            style={{ width: "50px" }}
+          />
+          {percent}%
+        </label>
       </div>
-    </>
-  )
-}
+    );
+  }
