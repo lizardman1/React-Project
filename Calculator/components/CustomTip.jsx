@@ -11,7 +11,7 @@ export default function CustomButton( {percent}, {setservice} ) {
      
      
     }
-    return <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
+    return <div className="flex w-full h-fit content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
                 onClick={handleToggle}
     
       >

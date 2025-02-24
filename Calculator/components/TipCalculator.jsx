@@ -14,11 +14,15 @@ export function TipCalculator(){
     setService(percent)
   }
 
-
   const calculateTip = () => {
 
       if(isNaN(amount) || isNaN(persons) || isNaN(service)){
         alert('Please enter valid values');
+        return;
+      }
+
+      if(amount < 0 || persons < 0){
+        alert('Please enter positive values')
         return;
       }
 
@@ -39,6 +43,7 @@ export function TipCalculator(){
 
       setTotal(totalAmount.toFixed(2));
       setTip(PersonsCalcTotal.toFixed(2));
+
     };
 
     return (
@@ -50,7 +55,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
-                className='p-2 bg-[#f2f7fa] text-right'
+                className='p-2 bg-[#f2f7fa] text-right rounded-sm'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
@@ -71,7 +76,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder='Number of Persons'
                 value={persons}
-                className='p-2 bg-[#f2f7fa] text-right'
+                className='p-2 bg-[#f2f7fa] text-right rounded-sm'
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
             <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold hover:bg-[#c2cd5f]'>Calculate</button>
