@@ -1,18 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function CustomButton( {percent}, {setservice} ) {
+export default function TipButton({ percent, setservice, checked =false }) {
   const ButtonClickable3 = (props) => {
-    const [isActive, setActive] = useState(false);
+   
     const handleToggle = (e) => {
-     setActive(!isActive);
-     props.onClick(e)
-     props.onClick(setservice({percent}))
-     
+  
+    // props.onClick(e)
+
+    setservice(parseFloat(percent))
      
     }
     return <div className="flex w-full content-center rounded p-2 text-xl text-white items-center justify-center bg-[#00474A] cursor-pointer has-checked:bg-[#28C4AF]"
-                onClick={handleToggle}
+    onClick={handleToggle}
     
       >
     
@@ -24,9 +24,10 @@ export default function CustomButton( {percent}, {setservice} ) {
                type="radio"
                name="tip"
                value={percent}
-               checked={isActive}
-               onChange={() => setservice({percent})}
+               checked={checked}
+               onChange={() => {}}
                className="hidden"
+            
              /> 
             
               {percent}%
@@ -35,7 +36,8 @@ export default function CustomButton( {percent}, {setservice} ) {
             }
   return (
     <>
-    <div className="flex justify-center">
+    <div className="flex justify-center"
+        >
       <ButtonClickable3 />
       </div>
     </>
