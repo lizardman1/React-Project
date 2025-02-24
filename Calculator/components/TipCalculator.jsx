@@ -62,7 +62,7 @@ export function TipCalculator(){
                             [5,10,15,20,25].map(s =>   <TipButton key={s} checked={service == s } percent={s} setservice={setservice} /> )
                           }
                       
-                          <TipButton percent={<input className="w-0.7" />} setservice={setservice}/>
+                          <TipButton percent={<input className="w-full" />} setservice={setservice}/>
                         </div>
 
             <label htmlFor="persons">Number of People</label>
