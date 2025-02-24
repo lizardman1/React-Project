@@ -50,11 +50,11 @@ export function TipCalculator(){
                 type = "number"
                 placeholder= "Enter Amount"
                 value = {amount}
-                className='p-2 bg-[#f2f7fa] text-right'
+                className='p-2 bg-[#f2f7fa] text-right rounded-sm'
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
-            <div className="grid grid-cols-3 gap-1"
+            <div className="w-full grid grid-cols-3 gap-1"
                         id="service"
                         onChange={(e) => setService(e.target.value)}>
             
@@ -71,7 +71,7 @@ export function TipCalculator(){
                 type = "number"
                 placeholder='Number of Persons'
                 value={persons}
-                className='p-2 bg-[#f2f7fa] text-right'
+                className='p-2 bg-[#f2f7fa] text-right rounded-sm'
                 onChange={(e) => setPersons(e.target.value)} />
             </div>
             <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full fomt-semibold hover:bg-[#c2cd5f]'>Calculate</button>
