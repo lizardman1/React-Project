@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState} from 'react'
 import TipButton from './TipButton';
 import CustomButton from './CustomButton';
 
+
 export function TipCalculator(){
   const [amount, setAmount] = useState('');
   const [persons, setPersons] = useState('1');
