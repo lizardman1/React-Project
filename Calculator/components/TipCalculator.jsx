@@ -54,7 +54,7 @@ export function TipCalculator(){
                 onChange={(e) => setAmount(e.target.value)} />
 
             <label htmlFor="service">Tip Amount %</label>
-            <div className="grid grid-cols-3 gap-1"
+            <div className="grid grid-cols-3 gap-1 max-w-md"
                         id="service"
                         onChange={(e) => setService(e.target.value)}>
             
@@ -62,7 +62,7 @@ export function TipCalculator(){
                             [5,10,15,20,25].map(s =>   <TipButton key={s} checked={service == s } percent={s} setservice={setservice} /> )
                           }
                       
-                          <CustomButton percent={<input className="w-full" />} setservice={setservice}/> 
+                          <CustomButton setservice={setservice} /> 
                         </div>
 
             <label htmlFor="persons">Number of People</label>
