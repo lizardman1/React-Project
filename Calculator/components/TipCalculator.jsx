@@ -17,7 +17,7 @@ export function TipCalculator(){
 
   const calculateTip = () => {
 
-      if(isNaN(amount) || isNaN(persons) || isNaN(service)){
+      if(isNaN(amount) || isNaN(persons) || isNaN(service) || amount >= 0){
         alert('Please enter valid values');
         return;
       }
