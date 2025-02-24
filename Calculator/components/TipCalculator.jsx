@@ -17,10 +17,19 @@ export function TipCalculator(){
 
   const calculateTip = () => {
 
-      if(isNaN(amount) || isNaN(persons) || isNaN(service) || amount >= 0 || numPersons >=1){
+      if(isNaN(amount) || isNaN(persons) || isNaN(service)){
         alert('Please enter valid values');
         return;
       }
+
+      if(amount < 0 || persons < 0){
+        alert('Please enter positive values')
+        return;
+      }
+
+     
+      
+      
 
       const numPersons = parseInt(persons, 10);
       const tipPercentage = parseFloat(service);
@@ -39,6 +48,7 @@ export function TipCalculator(){
 
       setTotal(totalAmount.toFixed(2));
       setTip(PersonsCalcTotal.toFixed(2));
+
     };
 
     return (
@@ -62,7 +72,7 @@ export function TipCalculator(){
                             [5,10,15,20,25].map(s =>   <TipButton key={s} checked={service == s } percent={s} setservice={setservice} /> )
                           }
                       
-                          <CustomButton percent={<input className="w-full" />} setservice={setservice}/> 
+                          {/* <CustomButton percent={<input className="w-full" />} setservice={setservice}/>  */}
                         </div>
 
             <label htmlFor="persons">Number of People</label>
