@@ -1,5 +1,13 @@
 import { TipCalculator } from "./TipCalculator"
 
+function GifCheck() {
+    if (submit = true) {
+        return <img src="/src/assets/tip.gif" alt="" className="h-50 w-auto" />
+    } else {
+        return <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" />
+    }
+}
+
 export default function TipComponents() {
     return (
         <div>
@@ -11,7 +19,7 @@ export default function TipComponents() {
             </div>
 
             <div className="bg-[#00464a] w-full h-full rounded-3xl rounded-bl-none text-white grid place-items-center p-2">
-            <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" /> 
+            <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" />
             {/* The results should hide/replace the image and span when being displayed*/}
             <span className="text-[#c5e5e8]">results will appear here</span>
              </div>
