@@ -102,7 +102,7 @@ export function TipCalculator() {
                     </div>
                   )}
                 {showEach && (
-                    <div className="text-center space-y-10">
+                    <div className="text-center space-y-5 p-10">
                         <div className='space-y-2'>
                             <p className='text-3xl font-bold'>Total:</p>
                             <p className='text-2xl m-2'>${total}</p>
@@ -110,7 +110,13 @@ export function TipCalculator() {
                         </div>
                         <div className='space-y-2'>
                             <p className='text-3xl font-bold'>Per person:</p>
-                            <p className='text-2xl m-2'>${tip}</p>
+                            <p className='text-2xl mt-2'>${tip}</p>
+                        </div>
+                        <div className='w-fit rounded-lg overflow-hidden'>
+                            <img 
+                                src='/src/assets/tip.gif'
+                                className='w-fill'
+                            />
                         </div>
                     </div>
                 )}
