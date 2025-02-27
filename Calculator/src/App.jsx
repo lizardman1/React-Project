@@ -8,7 +8,9 @@ import TestTip from '../pages/TestTipCalculator'
 
 import TipButton from '../components/TipButton'
 import ButtonTest from '../pages/ButtonTest'
-import TipComponentsCombined from '../components/TipComponentsCombined'
+import Xtest from '../components/Xtest'
+
+
 
 export default function App() {
   return (
@@ -19,7 +21,7 @@ export default function App() {
     <TipCalculator /> */}
 
       <Routes>
-        <Route index element={<TipComponentsCombined />} />
+        <Route index element={<Xtest />} />
         <Route path="/TestTipCalc" element={<TestTip />} />
         <Route path="/tipbutton" element={<ButtonTest />}  />
       </Routes>
