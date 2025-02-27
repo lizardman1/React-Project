@@ -27,6 +27,11 @@ export function TipCalculator() {
             return;
         }
 
+        if (amount === '' || persons === '') {
+            alert("Please enter valid values!");
+            return;
+        }
+
         const numPersons = parseInt(persons, 10);
         const tipPercentage = parseFloat(service);
 
@@ -34,6 +39,11 @@ export function TipCalculator() {
             setShowEach(false);
         } else {
             setShowEach(true);
+        }
+
+        if (service <= 0){
+            alert("Enter a positive tip value!");
+            return;
         }
 
         const totalTip = amount * (tipPercentage / 100);
