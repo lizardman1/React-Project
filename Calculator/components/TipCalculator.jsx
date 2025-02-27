@@ -91,15 +91,22 @@ export function TipCalculator() {
                         />
                     </div>
                     <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full font-semibold hover:bg-[#c2cd5f]'>Calculate</button>
-                    {showEach && (<div className='tip'><p>Total: ${total}</p></div>)}
-                    {showEach && persons > 1 && <div>Each person should pay: {tip}</div>}
                 </div>
             </div>
 
-            <div className="bg-[#00464a] w-full h-full rounded-3xl rounded-bl-none text-white grid place-items-center p-2">
-                {!(showEach) && (<img src="/src/assets/tip.png" alt="" className="h-50 w-auto" />)}
-                {/* The results should hide/replace the image and span when being displayed*/}
-                {!(showEach) && (<span className="text-[#c5e5e8]">results will appear here</span>)}
+            <div className="bg-[#00464a] w-full h-full rounded-3xl rounded-bl-none text-white grid place-items-center">
+                {!(showEach) && (
+                    <div className='w-full h-full grid place-items-center p-10'>
+                        <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" />
+                        <span className="text-[#c5e5e8]">results will appear here</span>
+                    </div>
+                  )}
+                {showEach && (
+                    <div className="">
+                        <div className='tip'><p>Total: ${total}</p></div>
+                        <div>Each person should pay: {tip}</div>
+                    </div>
+                )}
             </div>
         </div>
     );
