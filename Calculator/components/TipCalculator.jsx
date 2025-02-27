@@ -58,39 +58,49 @@ export function TipCalculator() {
     };
 
     return (
-        <div className='p-6 flex flex-col gap-6 max-w-md mx-auto bg-white rounded-br-3xl'>
-            <div className='flex gap-4 flex-wrap'>
-                <label htmlFor="amount">Bill</label>
-                <input
-                    id="amount"
-                    type="number"
-                    placeholder="Enter Amount"
-                    value={amount}
-                    className='p-2 bg-[#f2f7fa] text-right'
-                    onChange={(e) => setAmount(e.target.value)}
-                />
+        <div className='grid grid-cols-2 items-center max-w-2xl max-h-fit mx-auto rounded-4xl bg-white  border-white border-20 font-normal text-base'>
+            <div className="bg-[#00464a]">
+                <div className='p-6 flex flex-col gap-6 max-w-md mx-auto bg-white rounded-br-3xl'>
+                    <div className='flex gap-4 flex-wrap'>
+                        <label htmlFor="amount">Bill</label>
+                        <input
+                            id="amount"
+                            type="number"
+                            placeholder="Enter Amount"
+                            value={amount}
+                            className='p-2 bg-[#f2f7fa] text-right'
+                            onChange={(e) => setAmount(e.target.value)}
+                        />
 
-                <label htmlFor="service">Tip Amount %</label>
-                <div className="grid grid-cols-3 gap-1 max-w-md" id="service">
-                    {[5, 10, 15, 20, 25].map((s) => (
-                        <TipButton key={s} checked={service == s} percent={s} setservice={setservice} />
-                    ))}
-                    <CustomButton setservice={handleCustomService} checked={service === customValue} />
+                        <label htmlFor="service">Tip Amount %</label>
+                        <div className="grid grid-cols-3 gap-1 max-w-md" id="service">
+                            {[5, 10, 15, 20, 25].map((s) => (
+                                <TipButton key={s} checked={service == s} percent={s} setservice={setservice} />
+                            ))}
+                            <CustomButton setservice={handleCustomService} checked={service === customValue} />
+                        </div>
+
+                        <label htmlFor="persons">Number of People</label>
+                        <input
+                            id="persons"
+                            type="number"
+                            placeholder='Number of Persons'
+                            value={persons}
+                            className='p-2 bg-[#f2f7fa] text-right'
+                            onChange={(e) => setPersons(e.target.value)}
+                        />
+                    </div>
+                    <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full font-semibold hover:bg-[#c2cd5f]'>Calculate</button>
+                    {showEach && (<div className='tip'><p>Total: ${total}</p></div>)}
+                    {showEach && persons > 1 && <div>Each person should pay: {tip}</div>}
                 </div>
-
-                <label htmlFor="persons">Number of People</label>
-                <input
-                    id="persons"
-                    type="number"
-                    placeholder='Number of Persons'
-                    value={persons}
-                    className='p-2 bg-[#f2f7fa] text-right'
-                    onChange={(e) => setPersons(e.target.value)}
-                />
             </div>
-            <button onClick={calculateTip} className='bg-[#dada33] px-3 py-2 rounded-full font-semibold hover:bg-[#c2cd5f]'>Calculate</button>
-            {showEach && (<div className='tip'><p>Total: ${total}</p></div>)}
-            {showEach && persons > 1 && <div>Each person should pay: {tip}</div>}
+
+            <div className="bg-[#00464a] w-full h-full rounded-3xl rounded-bl-none text-white grid place-items-center p-2">
+                <img src="/src/assets/tip.png" alt="" className="h-50 w-auto" />
+                {/* The results should hide/replace the image and span when being displayed*/}
+                <span className="text-[#c5e5e8]">results will appear here</span>
+            </div>
         </div>
     );
 }
